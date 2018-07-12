@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+        this.sayName = fun;
+    }
+    function fun() {
+        alert("Hello" + this.name);
+    }
+    var person1 = new Person("laji",18);
+    alert(person1.__proto__ === Person.prototype);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三种自适应布局</title>
+    <style>
+        <!--绝对定位-->
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            margin: 0;
+            height: 100%;
+        }
+        .left, .right{
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 100%;
+        }
+        .left{
+            float: left;
+            left: 0;
+            background-color: #e27215;
+        }
+
+        .right{
+            float: right;
+            right: 0;
+            background-color: #aec396;
+        }
+        .main{
+            margin: 0 210px;
+            height: 100%;
+            background-color: #000;
+
+        }
+    </style>
+</head>
+<body>
+<div class="left"></div>
+<div class="main"></div>
+<div class="right"></div>
+<a href="images/1.jpg" download="1223">下载</a>
+</body>
+</html>

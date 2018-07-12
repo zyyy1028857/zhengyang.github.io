@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <style>
+       .caidan1>li{
+            list-style: none;
+            float: left;
+            padding: 10px;
+        }
+        nav a{
+            text-decoration: none;
+            color: #242424;
+            font-size: 16px;
+        }
+        .caidan2{
+            display: none;
+            background-color: #aaa;
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            list-style: none;
+            padding: 10px;
+            top: 38px;
+            left: -10px;
+
+        }
+        .item1{
+            position: relative;
+        }
+        li:hover{
+            background-color: pink;
+        }
+        .item1:hover .caidan2{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="caidan1">
+            <li class="item1"><a href="#">菜单</a>
+                <ul class="caidan2">
+                    <li>菜单2</li>
+                    <li>菜单2</li>
+                    <li>菜单2</li>
+                </ul>
+            </li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

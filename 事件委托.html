@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+<button id="btn01">添加超链接</button>
+<ul id="u1" style="background-color:#242424;">
+    <li><a href="javascript:;" class="link">超链接1</a></li>
+    <li><a href="javascript:;" class="link">超链接1</a></li>
+    <li><a href="javascript:;" class="link">超链接1</a></li>
+</ul>
+<script>
+    /*
+    * 为按钮增加事件，点击按钮增加新的链接
+    * 事件委派----将事件统一绑定给共同的祖先元素，后代元素事件触发时会一直冒泡到祖先元素
+    * 事件委派利用了冒泡，通过委派了一减少事件的绑定次数，提高程序的性能
+     * 如果触发的事件不是对象，则不执行
+     *  */
+    window.onload = function () {
+        var btn01 = document.getElementById("btn01");
+        var u1 = document.getElementById("u1");
+
+        btn01.onclick = function () {
+            var li = document.createElement("li");
+            li.innerHTML = "<a href=\"javascript:;\" class='link'>新链接</a>";
+            u1.appendChild(li);
+        };
+        u1.onclick = function () {
+            event = event || window.event;
+            /*
+            * target
+            * event中target表示的触发事件的对象
+            * */
+            if (event.target.className == "link"){
+                alert("点击了链接");
+            }
+        };
+    };
+
+
+</script>
+</body>
+</html>

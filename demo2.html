@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="js/jquery-3.3.1.min.js">
+</head>
+<body>
+<script>
+    function confirmEnding(str, target) {
+        // 请把你的代码写在这里
+        var len = target.length;
+        str = str.substring(str.length - len,str.length);
+        alert(str);
+        if(str == target){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    function repeat(str, num) {
+        // 请把你的代码写在这里
+        var str1 = "";
+        if(num < 0){
+            return "";
+        }else{
+            for(var i = 0; i < num ; i++){
+               str1 += str;
+            }
+        }
+        alert(str1);
+    }
+
+   // repeat("abc", 1);
+
+    function truncate(str, num) {
+        // 请把你的代码写在这里
+        const len = str.length;
+        if (len > num){
+            return str.slice(0, num) + "...";
+        }else {
+            return str;
+        }
+    }
+
+    //alert(truncate("A-tisket a-tasket A green and yellow basket", 11));
+
+    function chunk(arr, size) {
+        // 请把你的代码写在这里
+        var arr2=[];
+        for(var i=0;i<arr.length;i=i+size){
+            arr2.push(arr.slice(i,i+size));
+        }
+
+        //alert(arr2);
+    }
+
+    //console.log([1,2,3,4,5,6]);
+
+    //let msg = "Hello world!";
+    //alert(msg.endsWith("", 6));
+
+    function destroyer(arr) {
+        // 请把你的代码写在这里
+
+        var r = arr.filter(function(num){
+            for( var i = 1; i < arr.length - 1; i++){
+                return num === arr[i];
+            }
+        });
+
+        return r;
+    }
+
+    //destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+</script>
+</body>
+</html>

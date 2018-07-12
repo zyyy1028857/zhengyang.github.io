@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换</title>
+</head>
+<body>
+<script>
+    /*强制转换类型
+    *  讲一个数据类型转换为其它的数据类型
+    *  主要是 String Number Boolean
+    * */
+    /*var a = 123;
+    a.toString();//返回"123" String类型
+    console.log(typeof a);
+    var b = null;
+    b.toString();//报错
+    var c = undefined;
+    c.toString();//报错*/
+
+    /*
+     *将其它数据类型转换为Number类型
+     * 转换方式一
+     *
+     * */
+
+    var a = "123";
+    a = Number(a);
+    console.log(typeof a); //Number
+    console.log(a); //123
+
+    var b = "123aaa";
+    b = Number(b);
+    console.log(typeof b); //Number
+    console.log(b); //NaN
+
+    var c = "   ";
+    c = Number(c);
+    console.log(typeof c); //Number
+    console.log(c); //0
+
+    var d = true;
+    d = Number(d);
+    console.log(typeof d); //Number
+    console.log(d); //1
+</script>
+</body>
+</html>

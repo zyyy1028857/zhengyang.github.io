@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+<button id="btn">点击</button>
+<script>
+    /*
+    * addEventListener()
+    *  通过这个方法为元素绑定响应函数
+    *      参数：
+    *          1.事件的字符串，不要on
+    *          2.回调函数，当事件触发时该函数被调用
+    *          3.是否在捕获阶段触发事件，需要一个bool值，一般为false
+    *  使用它可以同时为一个元素绑定相同事件的同时绑定多个函数（Ie8及以下浏览器不支持）
+    * */
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click", function () {
+        alert(1);
+    },false);
+    btn.addEventListener("click", function () {
+        alert(2);
+    },false);
+
+   //IE 8及以下浏览器中
+   /* var btn = document.getElementById("btn");
+    btn.attachEvent("click", function(){
+        alert(0);
+    });*/
+</script>
+</body>
+</html>

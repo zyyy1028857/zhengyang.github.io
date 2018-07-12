@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .container{
+            margin: 100px auto;
+            width: 1000px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button class="btn btn-info" id="selAll">全选</button>
+    <button class="btn btn-primary" id="reverseSel">反选</button>
+    <button class="btn btn-danger" id="noSelAll">全不选</button><br><br>
+    <form action="" method="post">
+        <input type="checkbox">啊啦拉<br>
+        <input type="checkbox">啊啦拉<br>
+        <input type="checkbox">啊啦拉<br>
+        <input type="checkbox">啊啦拉<br>
+        <input type="checkbox">啊啦拉<br>
+        <input type="checkbox">啊啦拉
+    </form>
+</div>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var cbox = document.querySelectorAll(".container input");
+    //全选
+    $("selAll").onclick = function () {
+        for (var i = 0; i < cbox.length; i++){
+            cbox[i].checked = "checked";
+        }
+    }
+    //全不选
+    $("noSelAll").onclick = function () {
+        for (var i = 0; i < cbox.length; i++){
+                cbox[i].checked = "";
+        }
+    }
+    //反选
+    $("reverseSel").onclick = function () {
+        for (var i = 0; i< cbox.length; i++){
+            cbox[i].checked = !cbox[i].checked;
+        }
+    }
+
+</script>
+</body>
+</html>

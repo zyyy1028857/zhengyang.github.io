@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            text-decoration: none;
+        }
+        body{
+            background-color: #2c3e50;
+            min-width:1250px;
+            color:#2c3e50;
+
+        }
+        .contain{
+            width: 470px;
+            padding:40px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:110px;
+            background-color: #fff;
+            border-radius:5px;
+        }
+        #quote{
+            color:inherit;
+            text-align:center;
+            font-size:25px;
+        }
+        #author{
+            width: 450px;
+            text-align:right;
+            padding:20px 0;
+            position:relative;
+            clear:both;
+            font-size:16px;
+        }
+        .btn{
+            color:#fff;
+            border:0;
+            border-radius:6px;
+            background-color:  #2c3e50;
+            padding:12px;
+            font-size:14px;
+            outline:none;
+            cursor:pointer;
+        }
+        .buttons a{
+            position: relative;
+            top: 10px;
+        }
+        .btn-last{
+            float:right;
+        }
+        .btn:hover{
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div id="quote">
+        <span>
+            <i>“</i>
+                 Nothing in the world is more dangerous than
+            sincere ignorance and conscientious stupidity.
+        </span>
+    </div>
+    <div id="author">
+        <i>-</i>
+        <span> Martin Luther King Jr</span>
+    </div>
+    <div class="buttons">
+        <a href="https://twitter.com" target="_blank" class="btn" id="tiwter">
+            tiwter
+        </a>&nbsp;&nbsp;
+        <a href="http://tumblr.com" target="_blank" class="btn" id="tumblr">
+            tumblr
+        </a>
+        <button class="btn btn-last" id="newquote">new quote</button>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        //获取id
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        const colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224'];
+        var quotes = [
+            {author:"-Vivian Greene",quote:"\"Life isn't about waiting for the storm to pass; it's about learning to dance in the rain."},
+            {author:"-The Wizard of Oz", quote:"\"Toto, I've got a feeling we're not in Kansas anymore."},
+            {author:"-Star Wars: Empire Strikes Back",quote:"\"Do, or do not. There is no 'try'."},
+            {author:"-Pablo Picasso",quote:"\"Give me a museum and I'll fill it."},
+            {author:"-Casablanca",quote:"\"Of all the gin joints in all the towns in all the world, she walks into mine."}
+    ];
+        var currenQuote = "",currenAuthor = "",currenColor = "";//当前的名言，名人以及颜色
+
+
+        //点击new quote按钮变换内容以及背景色
+        $("newquote").onclick = function () {
+            var col = Math.floor(Math.random()*colors.length + 0); //随即获取颜色
+            currenColor = colors[col];
+            document.body.style.backgroundColor = document.body.style.color = currenColor;
+            var btn = document.getElementsByClassName("btn");
+            //改变三个按钮的背景色
+            for(var i = 0; i < btn.length; i++){
+                btn[i].style.backgroundColor = currenColor;
+            }
+            var num = Math.floor(Math.random()*quotes.length + 0);//获取0 到 quotes.length间的随机数
+            currenQuote = quotes[num].quote; //获取当前随机到的名言
+            currenAuthor = quotes[num].author; //获取当前对应名言的名人
+            $("quote").innerHTML = currenQuote;
+            $("author").innerHTML = currenAuthor;
+        }
+    }
+</script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</body>
+</html>

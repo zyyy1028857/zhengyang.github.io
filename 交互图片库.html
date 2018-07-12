@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交互图片库</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        .gallery{
+            position: relative;
+        }
+        a>img{
+            width: 300px;
+            height: 340px;
+        }
+       .gallery li{
+           display: inline-block;
+            float: left;
+            padding: 10px;
+        }
+       .gallery span{
+           display: none;
+       }
+        .gallery>span>img{
+            width: 500px;
+            height: 500px;
+        }
+        .gallery a{
+            text-decoration: none;
+            color: #333333;
+            font-style: italic;
+        }
+        .gallery a:hover span{
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <ul>
+            <li><a href="javascript:;"><img src="images/tell1.jpg" alt="">
+            <span><img src="images/tell1.jpg" alt=""></span><br> A image</a></li>
+            <li><a href="javascript:;"><img src="images/tell2.jpg" alt="">
+            <span><img src="images/tell2.jpg" alt=""></span><br> A image</a></li>
+            <li><a href="javascript:;"><img src="images/tell3.jpg" alt="">
+            <span><img src="images/tell3.jpg" alt=""></span><br> A image</a></li>
+            <li><a href="javascript:;"><img src="images/tell4.jpg" alt="">
+            <span><img src="images/tell4.jpg" alt=""></span><br> A image</a></li>
+            <li><a href="javascript:;"><img src="images/tel5.jpg" alt="" style="width: 300px;height: 380px;" >
+                <span><img src="images/tel5.jpg" alt=""></span><br> A image</a></li>
+         </ul>
+    </div>
+</body>
+</html>
